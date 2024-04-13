@@ -1,0 +1,22 @@
+#
+# Requirements for wger during development only
+#
+
+# Regular packages
+-r requirements.txt
+
+# Building/installing
+wheel==0.43.0
+
+# for ingredient import script from OFF
+pymongo==4.6.3
+
+# for running the dummy entry generators
+faker==24.4.0
+
+# Development packages
+coverage==7.4.4
+django-debug-toolbar==4.3.0
+isort==5.13.2
+ruff==0.3.5
+tblib==3.0.0

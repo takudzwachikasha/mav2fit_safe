@@ -62,41 +62,17 @@
                                 </li>
                             {% endif %}
 
-                            <li>
-                                <a class="dropdown-item" href="{% url 'gallery:images:overview' %}" rel="nofollow">
-                                    {% if not user.is_authenticated %}
-                                        <span class="{% fa_class 'lock' %}"></span>
-                                    {% endif %}
-                                    {% translate "Gallery" %}
-                                </a>
-                            </li>
+
+
+
 
 
                             <li class="dropdown-divider"></li>
-                            <li class="dropdown-header">{% translate "Workout templates" %}</li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'manager:template:overview' %}" rel="nofollow">
-                                    {% if not user.is_authenticated %}
-                                        <span class="{% fa_class 'lock' %}"></span>
-                                    {% endif %}
-                                    {% translate "Your templates" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{% url 'manager:template:public' %}" rel="nofollow">
-                                    {% if not user.is_authenticated %}
-                                        <span class="{% fa_class 'lock' %}"></span>
-                                    {% endif %}
-                                    {% translate "Public templates" %}
-                                </a>
-                            </li>
-
-                            <li class="dropdown-divider"></li>
-                            <li>
+                            {% comment %} <li>
                                 <a class="dropdown-item" href="{% url 'exercise:exercise:overview' %}">
                                     {% translate "Exercises" %}
                                 </a>
-                            </li>
+                            </li> {% endcomment %}
 
                             {% if perms.exercises.change_exercise %}
                                 <li class="dropdown-divider"></li>
@@ -122,6 +98,10 @@
                                     </a>
                                 </li>
                             {% endif %}
+
+
+
+
                         </ul>
                     </li>
 
@@ -136,7 +116,7 @@
                            rel="nofollow">{% translate "Nutrition" %} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{% url 'nutrition:plan:overview' %}" rel="nofollow">
+                                <a class="dropdown-item"   href="{% if user.is_authenticated  %}http://127.0.0.1:8888/preference.html{% endif %}" rel="nofollow">
                                     {% if not user.is_authenticated %}
                                         <span class="{% fa_class 'lock' %}"></span>
                                     {% endif %}
@@ -159,12 +139,15 @@
                                     {% translate "Daily calories calculator" %}
                                 </a>
                             </li>
-                            <li>
+                            {% comment %} <li>
                                 <a class="dropdown-item"
                                    href="{% url 'nutrition:ingredient:list' %}">
                                     {% translate "Ingredient overview" %}
                                 </a>
-                            </li>
+                            </li> {% endcomment %}
+
+
+
                             {% if perms.nutrition %}
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-header">{% translate "Administration" %}</li>
@@ -214,53 +197,24 @@
 
                     {#              #}
                     {# Software tab #}
-                    {#              #}
-                    <li class="nav-item dropdown">
-                        <a href=""
-                           class="dropdown-toggle nav-link text-white {% if active_tab == 'software' %}active{% endif %}"
-                           data-bs-toggle="dropdown">{% translate "About this software" %} <b
-                            class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item"
-                                   href="{% url 'software:about-us' %}">
-                                    {% translate "About us" %}
-                                </a>
-                            </li>
-                            <li class="dropdown-divider"></li>
-                            <li>
-                                <a class="dropdown-item"
-                                   href="{% url 'software:api' %}">{% translate "REST API" %}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item"
-                                   href="https://github.com/wger-project/wger/blob/master/LICENSE.txt">
-                                    <span class="{% fa_class 'external-link-alt' %}"></span>
-                                    {% translate "License" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="https://wger.readthedocs.io/">
-                                    <span class="{% fa_class 'external-link-alt' %}"></span>
-                                    {% translate "Developer documentation" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item"
-                                   href="https://github.com/wger-project/wger">
-                                    <span class="{% fa_class 'external-link-alt' %}"></span>
-                                    {% translate "Get the code" %} (Github)
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item"
-                                   href="https://hosted.weblate.org/engage/wger/">
-                                    <span class="{% fa_class 'external-link-alt' %}"></span>
-                                    {% translate "Translate" %}
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    {#    {% url 'software:about-us' %}          #}
+
+
+                    <a
+
+                    href="{% if user.is_authenticated  %}http://127.0.0.1:8888{% endif %}"
+                    class="dropdown-togglse nav-link text-white {% if active_tab == 'plans' %}active{% endif %}"
+                  >{% translate "Nutrition Assistant" %} <b
+                     class="caret"></b></a>
+
+
+
+                    <a   href="{% url 'software:about-us' %}"
+                    class="dropdown-togglse nav-link text-white {% if active_tab == 'software' %}active{% endif %}"
+                  >{% translate "About this software" %} <b
+                     class="caret"></b></a>
+
+
                 </ul>
 
 

@@ -155,71 +155,33 @@
 </div>
 
 
-<footer id="main-footer" class="bg-light border-top">
+{% comment %} <footer id="main-footerm" class="bg-light border-top">
     <div class="container bg-wger-light">
         <div class="row">
-            <div class="col-xl-2 col-md-3">
-                <a href="https://play.google.com/store/apps/details?id=de.wger.flutter">
-                    <img src="{% static 'images/logos/play-store/google-play-badge.png' %}"
-                         height="60"
-                         alt="Get it on Google Play"
-                         title="Get it on Google Play">
+
+
+
+         <div class="col-xl-2 col-md-3">
+
+
+                <a href="https://www.mav2fit.com">
+                    Developed by Mav2fit Team
                 </a>
             </div>
-            <div class="col-xl-6 col-md-5">
-                <ul class="list-unstyled mb-0 pt-2">
-                    <li>
-                        <a href="{% url 'core:imprint' %}" class="text-muted small">
-                            {% translate "Imprint" %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'software:tos' %}" class="text-muted small">
-                            {% translate "Terms of service" %}
-                        </a>
-                    </li>
-                </ul>
+
+
+            <div class="col-xl-2 col-md-3">
+
+
+                <a href="https://www.mav2fit.com">
+                  <i class="fa fa-copyright mx-2" aria-hidden="true"></i>Copyright 2024
+                </a>
             </div>
 
-            {#                                         #}
-            {# Render the links to the other languages #}
-            {#                                         #}
-            <div class="col-md-4">
-                {% if not is_api_path %}
-                    {# Don't show language switcher in the generated API views #}
-                    <div class="btn-group dropup">
-                        <button class="btn btn-light dropdown-toggle"
-                                type="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                            <span class="{% fa_class 'globe' %}"></span>
-                            {% translate i18n_language.name %}
-                            <span class="caret"></span>
-                        </button>
 
-                        <ul class="dropdown-menu" aria-labelledby="btnGroupLanguages">
-                            {% for language in languages %}
-                                {% language_select language %}
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider"></hr>
-                            </li>
-                            <li>
-                                <a href="https://hosted.weblate.org/engage/wger/"
-                                   class="dropdown-item"
-                                   target="_blank">
-                                    <span class="{% fa_class 'plus' %}"></span>
-                                    {% translate "Translate" %}
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                {% endif %}
-            </div>
         </div>
     </div>
-</footer>
+</footer> {% endcomment %}
 
 </body>
 </html>

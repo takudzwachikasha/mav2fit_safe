@@ -188,7 +188,10 @@ function wgerRenderBodyMassIndex() {
       $bmiForm.serialize(),
       function (postData) {
         $('#bmi-result-container').show();
-        $('#bmi-result-value').html(postData.bmi);
+         $('#bmi-result-value').html(postData.bmi);
+        // $('#calorie-value').html(postData.bmi);
+        // console.log("Childern");
+
         svg.append('circle')
           .attr('cx', x(postData.height))
           .attr('cy', y(postData.weight))
@@ -208,6 +211,7 @@ function wgerInitCaloriesCalculator() {
     baseCalories = Number($('#id_base_calories').html());
     $('#id_calories').val(baseCalories);
   });
+
 
   $('#add-calories-total').click(function (e) {
     var additionalCalories;

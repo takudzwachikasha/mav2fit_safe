@@ -194,6 +194,8 @@ urlpatterns = [
     path('', misc.index, name='index'),
     # The dashboard
     path('dashboard', misc.dashboard, name='dashboard'),
+
+    # path('nutri', TemplateView.as_view(template_name='../nutriplan/templates/index.html'), name='nutrition'),
     # Others
     path(
         'imprint',

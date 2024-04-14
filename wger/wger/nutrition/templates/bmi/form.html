@@ -34,6 +34,8 @@ $(document).ready(function () {
     $("#submit-id-submit").click(function(e){
         e.preventDefault();
         wgerRenderBodyMassIndex();
+        window.location.reload()
+        {% comment %} console.log('how are you') {% endcomment %}
     });
 
 });
@@ -58,9 +60,19 @@ $(document).ready(function () {
 {% crispy form %}
 
 
+
 <div id="bmi-result-container" style="display:none;">
     <h3>{% translate 'Results' %}</h3>
-    <p>{% translate 'Your BMI is: ' %} <strong><span id="bmi-result-value">{{user.userprofile.calculate_bmi|floatformat:1}}</span></strong></p>
+    <p>{% translate 'Your BMI is : ' %} <strong>
+        <span  id="bmi-result-value">{{user.userprofile.calculate_bmi|floatformat:1}}</span></strong></p>
+
+    <p  >{% translate 'The suggested daily calorie intake is : ' %} <strong class="text-danger h5"> <span id="calorie-value">
+{% comment %} {{#bmi-result-value}} {% endcomment %}
+        {{user.userprofile.estimate_calorie_intake}}
+        {% comment %} <span id="id_base_calories"></span> {% endcomment %}
+    </span></strong></p>
+
+
 </div>
 
 

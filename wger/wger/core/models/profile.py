@@ -447,6 +447,37 @@ by the US Department of Agriculture. It is extremely complete, with around
         height = self.height if self.use_metric else AbstractHeight(self.height, 'inches').inches
         return weight / pow(height / decimal.Decimal(100), 2)
 
+
+    def estimate_calorie_intake(self):
+        # Estimate calorie intake from BMI
+
+        #sendentary
+        calories=self.calculate_bmi()*decimal.Decimal(1.2)
+
+        #light
+        if self.work_intensity == self.INTENSITY_LOW:
+            calories=self.calculate_bmi()*decimal.Decimal(1.37)
+
+
+        #moderate
+        # calories=self.calculate_bmi*1.55
+
+        #active
+        if self.work_intensity == self.INTENSITY_MEDIUM:
+            calories=self.calculate_bmi()*decimal.Decimal(1.725)
+
+        #very active
+        if self.work_intensity == self.INTENSITY_HIGH:
+            calories=self.calculate_bmi()*decimal.Decimal(1.9)
+
+
+        factor = self.calculate_activities()
+        total = self.calculate_basal_metabolic_rate() * factor
+        return str(int(total))  #float(calories)
+
+
+
+
     def calculate_basal_metabolic_rate(self, formula=1):
         """
         Calculates the basal metabolic rate.

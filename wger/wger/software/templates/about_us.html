@@ -2,44 +2,28 @@
 {% load static i18n wger_extras %}
 
 
-{% block title %}{% translate "About us" %}{% endblock %}
+{% block title %}{% translate "About us" %}
+
+<img src="{% static 'images/logos/logo-font-inverse.svg' %}" class="logo" height=200 alt=" mav2fit logo"/>
+
+{% endblock %}
 
 {% block content %}
     <p>
         {% blocktranslate trimmed %}
-            Thank you for using wger! wger is a collaborative open source project, made
-            by fitness enthusiasts from around the world.
+            Thank you for using mav2fit!
+
+           <p>
+             mav2fit provides basic support for gym management. It can be used to manage gym members, their exercise routines and attendance.
+           </p>
+            <p>This application allows delegating administrative tasks to gym managers (add/edit contacts, send notifications to inactive members) or trainers (add/edit workouts).
+            wger offers gym-optimized view and countdown for weights tracking.
+            <p>
         {% endblocktranslate %}
     </p>
 
 
-    <h5>
-        <span class="{% fa_class 'code' %}"></span>
-        {% translate 'Source code' %}
-    </h5>
-    <p>{% translate 'Get the source code of this application and its server on github' %}</p>
-    <a class="btn btn-outline-primary mb-5" href="https://github.com/wger-project">https://github.com/wger-project</a>
 
-    <h5>
-        <span class="{% fa_class 'bug' %}"></span>
-        {% translate 'Have a problem or idea?' %}
-    </h5>
-    <p>{% translate "Get in touch if something didn't behave as expected or if there is a feature that you feel is missing." %}</p>
-    <a class="btn btn-outline-primary mb-5" href="https://github.com/wger-project/wger/issues/new/choose">https://github.com/wger-project/wger/issues/new/choose</a>
-
-    <h5>
-        <span class="{% fa_class 'comments' %}"></span>
-        {% translate 'Say hi!' %}
-    </h5>
-    <p>{% translate 'If you want to chat with us, hop on the Discord server and get in touch' %}</p>
-    <a class="btn btn-outline-primary mb-5" href="https://discord.gg/rPWFv6W">https://discord.gg/rPWFv6W</a>
-
-    <h5>
-        <span class="{% fa_class 'language' %}"></span>
-        {% translate 'Translation' %}
-    </h5>
-    <p>{% translate 'This application is translated on weblate. If you also want to help, click the link and start translating' %}</p>
-    <a class="btn btn-outline-primary mb-5" href="https://hosted.weblate.org/engage/wger/">https://hosted.weblate.org/engage/wger/</a>
 
 {% endblock %}
 
@@ -52,12 +36,12 @@
         <div class="card-body">
             {% blocktranslate %}The goal is to build an awesome
                 and flexible fitness manager, along with a comprehensive and complete list of exercises and
-                ingredients, all released under a free license.{% endblocktranslate %}
+                ingredients.{% endblocktranslate %}
         </div>
     </div>
 
     <div class="alert alert-dark mt-5" role="alert">
-        {% translate "Current version" %} {{ version }}
+        {% translate "Current version" %} {{ 1.0 }}
     </div>
 {% endblock %}
 

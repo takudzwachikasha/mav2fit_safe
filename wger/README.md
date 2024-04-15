@@ -1,37 +1,8 @@
-﻿# wger
-
-<img src="https://raw.githubusercontent.com/wger-project/wger/master/wger/core/static/images/logos/logo.png" width="100" height="100"  alt="wger logo"/>
-
-wger (ˈvɛɡɐ) Workout Manager is a free, open source web application that helps
-you manage your personal workouts, weight and diet plans and can also be used
-as a simple gym management utility. It offers a REST API as well, for easy
-integration with other projects and tools.
-
-For a live system, refer to the project's site: <https://wger.de/>
-
-<img
-src="https://raw.githubusercontent.com/wger-project/wger/master/wger/software/static/images/screens-3.png"
-alt="Screenshot"
-width="400">
-
-## Mobile app
-
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-alt="Get it on Google Play"
-height="80">](https://play.google.com/store/apps/details?id=de.wger.flutter)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-alt="Get it on F-Droid"
-height="80">](https://f-droid.org/packages/de.wger.flutter/)
+﻿# mav2fit
 
 ## Installation
 
-These are the basic steps to install and run the application locally on a Linux
-system. There are more detailed instructions, other deployment options as well
-as an administration guide available at <https://wger.readthedocs.io> or in the
-[docs repo](https://github.com/wger-project/docs).
 
-Please consult the commands' help for further information and available
-parameters.
 
 ### Production
 

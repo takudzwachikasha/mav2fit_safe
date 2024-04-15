@@ -8,11 +8,6 @@ NutriPlan is a nutrition/diet web application. It allows users to set up a dieta
 2. Install flask using `pip install flask`
 3. Run the server using `python flask_server.py`
 
-
-## Video Demo
-
-[![Video Demo](/pictures/video.png)](https://youtu.be/qHQXprU_Wno)
-
 ## Usage
 
 ### Adding a Food

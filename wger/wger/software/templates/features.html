@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-lg px-4" style="background-color:#B80000;">
             <div class="container-xl">
                 <a class="navbar-brand" href="{% url 'core:index' %}">
-                    <img src="{% static 'images/logos/logo-font.svg' %}" alt=" mav2fit logo"/>
+                    <img src="{% static 'images/logos/logo-font.svg' %}" class="logo img-responsive" height=100  alt=" mav2fit logo"/>
                 </a>
                 <button class="navbar-toggler"
                         type="button"
@@ -115,11 +115,7 @@
 
                     <a role="button"
                        class="btn btn-primary rounded-1 bg-dark-blue py-2 px-5"
-                       href="{% if user.is_authenticated %}
-                                {% url 'core:index' %}
-                            {% else %}
-                                {% url 'core:user:login' %}
-                            {% endif %}">
+                       href="{% url 'core:user:registration' %}">
                         {% translate "Get Started" %}
                     </a>
 
@@ -206,11 +202,10 @@
         <div class="row w-100 p-5 d-flex justify-content-center">
             <a role="button"
                class="btn btn-primary rounded-1 bg-dark-blue w-auto px-5"
-               href="{% if allow_guest_users and not user.is_authenticated %}
-                        {% url 'core:user:demo-entries' %}
-                    {% else %}
-                        {% url 'core:index' %}
-                    {% endif %}">
+
+
+                    href="{% url 'core:user:registration' %}"
+                    >
                 {% translate "Try  mav2fit now" %}
             </a>
         </div>
@@ -292,7 +287,7 @@
 
 
             <div class="d-flex pb-4">
-                <img src="{% static 'images/logos/logo-font-inverse.svg' %}" alt=" mav2fit logo"/>
+                <img src="{% static 'images/logos/logo-font-inverse.svg' %}" height=100  alt=" mav2fit logo"/>
             </div>
             <div class="row row-cols-lg-4 row-cols-sm-1 g-2 border-bottom border-light pb-3">
                 <div class="col-lg-3z col-sm-6z col-12z  row row-cols-lg-4 row-cols-sm-1">

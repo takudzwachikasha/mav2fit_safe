@@ -153,15 +153,15 @@
                             {% if perms.nutrition %}
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-header">{% translate "Administration" %}</li>
-                                <li><a class="dropdown-item"
+                                {% comment %} <li><a class="dropdown-item"
                                        href="{% url 'nutrition:weight_unit:list' %}">{% translate "Ingredient weight units" %}</a>
-                                </li>
-                                <li>
+                                </li> {% endcomment %}
+                                {% comment %} <li>
                                     <a class="dropdown-item"
                                        href="{% url 'nutrition:ingredient:pending' %}">
                                         {% translate "Ingredients pending review" %}
                                     </a>
-                                </li>
+                                </li> {% endcomment %}
                             {% endif %}
                         </ul>
                     </li>
@@ -284,22 +284,7 @@
                                 {% if user.userprofile.has_exercise_permission or perms.gym.manage_gyms or perms.gym.manage_gym or perms.gym.gym_trainer %}
                                     <li class="dropdown-divider"></li>
                                     <li class="dropdown-header">{% translate "Administration" %}</li>
-                                    {% if perms.core.change_language %}
-                                        <li>
-                                            <a class="dropdown-item"
-                                               href="{% url 'core:language:overview' %}">
-                                                {% translate "Languages" %}
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                    {% if perms.core.change_license %}
-                                        <li>
-                                            <a class="dropdown-item"
-                                               href="{% url 'core:license:list' %}">
-                                                {% translate "Licenses" %}
-                                            </a>
-                                        </li>
-                                    {% endif %}
+
                                     {% if perms.core.change_repetitionunit %}
                                         <li>
                                             <a class="dropdown-item"
@@ -323,23 +308,23 @@
                                                 {% translate "User list" %}
                                             </a>
                                         </li>
-                                        <li>
+                                        {% comment %} <li>
                                             <a class="dropdown-item"
                                                href="{% url 'gym:gym:list' %}">
                                                 {% translate "Gyms" %}
                                             </a>
-                                        </li>
+                                        </li> {% endcomment %}
                                     {% endif %}
 
                                     {# it's not possible to group expressions '(a or b) and c' #}
                                     {% if perms.gym.gym_trainer or perms.gym.manage_gym %}
                                         {% if user.userprofile.gym %}
-                                            <li>
+                                            {% comment %} <li>
                                                 <a class="dropdown-item"
                                                    href="{% url 'gym:gym:user-list' user.userprofile.gym.pk %}">
                                                     {{ user.userprofile.gym }}
                                                 </a>
-                                            </li>
+                                            </li> {% endcomment %}
                                         {% endif %}
                                     {% endif %}
                                 {% endif %}

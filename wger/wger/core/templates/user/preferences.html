@@ -50,10 +50,10 @@
                     <span class="{% fa_class 'key' %}"></span>
                     {% translate "Change password" %}
                 </a>
-                <a href="{% url 'core:user:api-key' %}" class="dropdown-item">
+                {% comment %} <a href="{% url 'core:user:api-key' %}" class="dropdown-item">
                     <span class="{% fa_class 'globe' %}"></span>
                     {% translate "API key" %}
-                </a>
+                </a> {% endcomment %}
                 <div role="separator" class="dropdown-divider"></div>
                 <a href="{% url 'core:user:delete' %}" class="wger-modal-dialog dropdown-item">
                     <span class="{% fa_class 'trash' %}"></span>

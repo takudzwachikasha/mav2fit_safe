@@ -127,7 +127,7 @@
             </section>
 
             <!-- board section -->
-            <section class="row">
+            <section class="row justify-content-between">
                 <div class="col-6 col-md-3 d-flex flex-column align-items-center">
                     <h2 class="display-3 font-bebas-neue text-dark-blue mb-0">{{ nr_users }}+</h2>
                     <p class="text-center">{% translate "people <br> using  mav2fit" %}</p>
@@ -137,13 +137,12 @@
                     <p class="text-center">{% translate "exercises <br> for workout creation" %}</p>
                 </div>
                 <div class="col-6 col-md-3 d-flex flex-column align-items-center">
-                    <h2 class="display-3 font-bebas-neue text-dark-blue mb-0">{{ nr_ingredients }}+</h2>
+                    <h2 class="display-3 font-bebas-neue text-dark-blue mb-0">{{1090 }}+</h2>
                     <p class="text-center">{% translate "foods <br> for meal planing" %}</p>
                 </div>
-                <div class="col-6 col-md-3 d-flex flex-column align-items-center">
-                    <h2 class="display-3 font-bebas-neue text-dark-blue mb-0">{{ nr_stars }}+</h2>
-                    <p class="text-center">{% translate "stars <br> on GitHub" %}</p>
-                </div>
+
+
+
             </section>
 
 
@@ -175,10 +174,10 @@
                     </div>
                     <div
                         class="col-lg-5 col-sm-12 d-flex flex-column align-items-start justify-content-center py-2">
-                        <h2 class="w-100 font-bebas-neue display-4 uppercase w-100 header-progress">
-                            {% translate "Keep track of <span>your progress</span>" %}
+                        <h2 class="w-100 font-bebas-neue display-4 uppercase w-100 header-progressm">
+                            {% translate "Keep track of <span text-dark-blue>your progress</span>" %}
                         </h2>
-                        <ul class="hex-bullet bullet-green">
+                        <ul class="hex-bullet bullet-greenn text-dark-blued bullet-dark-blue">
 
                             <li>
                                 {% translate "Track and annotate everything about your meals and workouts" %}
@@ -218,7 +217,9 @@
 
 
 
+
         <!-- sign up section -->
+
         <section class="main-section  ">
             <div class="container d-flex align-items-center justify-content-center sign-up-bg">
 
@@ -237,13 +238,14 @@
             </div>
         </section>
 
+
         <!-- not enough section  -->
         <section class="bg-bottom-menu p-5">
             <div class="container-xl">
                 <h1 class="w-100 display-4 text-white text-center text-uppercase heading-h6 py-4">
-                    {% translate "Web version not enough?" %}
+                    {% translate "Try our services" %}
                     <br>
-                    {% translate "Get the code, too!" %}
+
                 </h1>
                 <div class="row py-4">
                     <div
@@ -254,45 +256,30 @@
                              alt="dumbbell icon"
                              class="mb-4">
                         <h6 class="text-white fw-bold text-center">
-                            {% translate "Set up a private server for your gym" %}
+                            {% translate "We have the best automated gym guides" %}
                         </h6>
-                        <p class="text-light fw-lighter text-center">
-                            {% blocktranslate trimmed %}
-                                Don't want your data on an online service? Set up a  mav2fit instance
-                                on your own server for free!
-                            {% endblocktranslate %}
-                        </p>
+
                     </div>
                     <div
                         class="col-lg-4 col-sm-12 d-flex flex-column align-items-center justify-content-start gap-2">
-                        <img src="{% static 'images/code.svg' %}"
-                             height="96"
-                             width="96"
-                             alt="code icon"
-                             class="mb-4">
+
+
+                             <i class="fa fa-book fa-5x text-white "></i>
+
                         <h6 class="text-white fw-bold text-center">
-                            {% translate "Integrate with your own app" %}
+                            {% translate "Get automatic diet plans" %}
                         </h6>
-                        <p class="text-light fw-lighter text-center">
-                            {% translate " mav2fit offers an open API that you can use for your app." %}
-                        </p>
+
                     </div>
                     <div
                         class="col-lg-4 col-sm-12 d-flex flex-column align-items-center justify-content-start gap-2">
-                        <img src="{% static 'images/fork.svg' %}"
-                             height="96"
-                             width="96"
-                             alt="git branch icon"
-                             class="mb-4">
+
+
+                             <i class="fa fa-robot fa-5x text-white mb-5"></i>
                         <h6 class="text-white fw-bold text-center">
-                            {% translate "Create your own version" %}
+                            {% translate "Get all nutritional foods, generated with AI" %}
                         </h6>
-                        <p class="text-light fw-lighter text-center">
-                            {% blocktranslate trimmed %}
-                                The source code is available under the GNU AGPLv3 license! Feel
-                                free to fork it on GitHub.
-                            {% endblocktranslate %}
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -315,10 +302,12 @@
                         <li class="list-group-item bg-transparent border-0 text-light ps-0">
                             <h1 class="fs-5 text-white">{% translate "Account" %}</h1>
                         </li>
-                        <li class="list-group-item bg-transparent border-0 text-light fw-lighter ps-0">
+                        <li class="list-group-item bg-transparent border-0 text-dark-blue text-light fw-lighter ps-0">
+
                             <a href="{% url 'core:user:registration' %}">
                                 {% translate "Register" %}
                             </a>
+
                         </li>
                         <li class="list-group-item bg-transparent border-0 text-light fw-lighter ps-0">
                             <a href="{% url 'core:user:login' %}">

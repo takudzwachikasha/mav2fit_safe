@@ -16,6 +16,6 @@ Add data for the about us section
 
 # change footer structure
 # explain more about the search food input box
-set software features page as a basic web page
+# set software features page as a basic web page
 replace dashboard components 
 replace logo
